@@ -1,0 +1,318 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --light-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.weather-container {
+    padding: 40px 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: slideDown 0.6s ease-out;
+}
+
+.page-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* Current Weather Card */
+.weather-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+}
+
+.weather-card-header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.weather-card-header h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.weather-card-body {
+    padding: 40px 30px;
+    background: linear-gradient(to bottom, #fff, #f8f9fa);
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 0;
+}
+
+.weather-info-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.weather-info-item:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.weather-info-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.weather-info-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.weather-info-value.condition {
+    font-size: 1.3rem;
+    color: #495057;
+    text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+    .weather-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .page-title h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Forecast Section */
+.forecast-section {
+    margin-top: 50px;
+    animation: fadeInUp 0.7s ease-out 0.2s both;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--primary-gradient);
+    display: inline-block;
+}
+
+.forecast-table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.7s ease-out 0.3s both;
+}
+
+.forecast-table table {
+    margin-bottom: 0;
+}
+
+.forecast-table thead {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.forecast-table thead th {
+    padding: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.forecast-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.forecast-table tbody tr:hover {
+    background: #f8f9ff;
+    box-shadow: inset 0 0 10px rgba(102, 126, 234, 0.1);
+}
+
+.forecast-table tbody td {
+    padding: 18px 20px;
+    color: #495057;
+    font-weight: 500;
+}
+
+.forecast-table tbody td:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.forecast-table tbody td:last-child {
+    text-transform: capitalize;
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Export Section */
+.export-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.7s ease-out 0.4s both;
+}
+
+.export-section .section-title {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.export-group {
+    margin-bottom: 30px;
+}
+
+.export-group-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-export {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-export-csv {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-export-csv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-export-excel {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-export-excel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* No data state */
+.no-data {
+    background: white;
+    border-radius: 15px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.no-data .alert {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 0;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="/weatherapp/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/weatherapp/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/weatherapp/WeatherWebApp.styles.css" asp-append-version="true" />
+    <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+                    min-height: 100vh;
+                }
+
+                /* Navbar Styling */
+                .navbar {
+                    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+                    padding: 1rem 0;
+                    margin-bottom: 0 !important;
+                }
+
+                .navbar-brand {
+                    font-size: 1.5rem !important;
+                    font-weight: 700;
+                    color: white !important;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    transition: transform 0.3s ease;
+                }
+
+                .navbar-brand:hover {
+                    transform: scale(1.05);
+                    color: white !important;
+                }
+
+                .navbar-toggler {
+                    border: none;
+                }
+
+                .navbar-toggler:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+
+                /* Main Content */
+                main {
+                    padding: 0;
+                }
+
+                .container {
+                    max-width: 100%;
+                    padding: 0;
+                }
+
+                /* Scrollbar Styling */
+                ::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background: #667eea;
+                    border-radius: 5px;
+                }
+
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #764ba2;
+                }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Weather" asp-action="Index">
+                    <span style="font-size: 1.8rem;">🌦️</span>
+                    <span>Weather</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="/weatherapp/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="/weatherapp/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="/weatherapp/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
